@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>代理模式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="定义：为一个对象提供一个代用品或者占位符，以便控制对他的访问&amp;emsp;&amp;emsp;代理模式的关键在于，当客户不方便直接访问一个对象或者不满足需要的时候，提供一个替身对象来控制对这个对象的访问，客户实际上访问的时替身对象。替身对象对请求做一定的处理之后，再把请求转交给本体对象。&amp;emsp;&amp;emsp;示例：小明追求女神，送花的故事&amp;emsp;&amp;emsp;小明可以直接把花送给女神1234567891">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代理模式">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/agency/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="定义：为一个对象提供一个代用品或者占位符，以便控制对他的访问&amp;emsp;&amp;emsp;代理模式的关键在于，当客户不方便直接访问一个对象或者不满足需要的时候，提供一个替身对象来控制对这个对象的访问，客户实际上访问的时替身对象。替身对象对请求做一定的处理之后，再把请求转交给本体对象。&amp;emsp;&amp;emsp;示例：小明追求女神，送花的故事&amp;emsp;&amp;emsp;小明可以直接把花送给女神1234567891">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-17T06:57:39.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代理模式">
+<meta name="twitter:description" content="定义：为一个对象提供一个代用品或者占位符，以便控制对他的访问&amp;emsp;&amp;emsp;代理模式的关键在于，当客户不方便直接访问一个对象或者不满足需要的时候，提供一个替身对象来控制对这个对象的访问，客户实际上访问的时替身对象。替身对象对请求做一定的处理之后，再把请求转交给本体对象。&amp;emsp;&amp;emsp;示例：小明追求女神，送花的故事&amp;emsp;&amp;emsp;小明可以直接把花送给女神1234567891">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-agency" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/17/agency/" class="article-date">
+  <time datetime="2018-10-17T06:53:32.000Z" itemprop="datePublished">2018-10-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      代理模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="定义：为一个对象提供一个代用品或者占位符，以便控制对他的访问"><a href="#定义：为一个对象提供一个代用品或者占位符，以便控制对他的访问" class="headerlink" title="定义：为一个对象提供一个代用品或者占位符，以便控制对他的访问"></a>定义：为一个对象提供一个代用品或者占位符，以便控制对他的访问</h4><p>&emsp;&emsp;代理模式的关键在于，当客户不方便直接访问一个对象或者不满足需要的时候，提供一个替身对象来控制对这个对象的访问，客户实际上访问的时替身对象。替身对象对请求做一定的处理之后，再把请求转交给本体对象。<br>&emsp;&emsp;示例：小明追求女神，送花的故事<br>&emsp;&emsp;小明可以直接把花送给女神<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代理模式</span></span><br><span class="line"><span class="keyword">var</span> Flower = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">  sendFlower: <span class="function"><span class="keyword">function</span> (<span class="params">target</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> flower = <span class="keyword">new</span> Flower(<span class="string">'向日葵'</span>);</span><br><span class="line">    target.reciveFlower(flower);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xiaoli = &#123;</span><br><span class="line">  reciveFlower: <span class="function"><span class="keyword">function</span> (<span class="params">flower</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'xiaoli收到了'</span> + flower.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">xiaoming.sendFlower(xiaoli);</span><br></pre></td></tr></table></figure></p>
+<p>  &emsp;&emsp;但是直接把花给女神，女神可能心情好，也可能心情不好，所以只有50%的概率接受花，那么这时候就需要将花给女神闺蜜，当女神心情好的时候将花送给女神。<br> &emsp;&emsp;就在这个时候，老王上线了👻，小明先将花给老王，老王监听小丽心情，当小丽心情好的时候再将花转交给小丽（<strong>控制不同权限的对象对目标对象的访问</strong>）。当然花也挺贵的，万一买了花女神正好心情不好那就要吃土了，所以把钱给老王，等小丽心情好的时候再去买。（<strong>将开销很大的对象延迟到真正需要它的时候再去创建它</strong>）<br> &emsp;&emsp;修改代码如下：<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">  sendFlower: <span class="function"><span class="keyword">function</span> (<span class="params">target</span>)</span>&#123;</span><br><span class="line">    target.reciveFlower();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> xiaoli = &#123;</span><br><span class="line">  reciveFlower: <span class="function"><span class="keyword">function</span> (<span class="params">flower</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'xiaoli收到了'</span> + flower.name);</span><br><span class="line">  &#125;,</span><br><span class="line">  listenGoodMood: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      fn();</span><br><span class="line">    &#125;, <span class="number">5000</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> laowang = &#123;</span><br><span class="line">  reciveFlower: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    xiaoli.listenGoodMood(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> flower = <span class="keyword">new</span> Flower(<span class="string">'玫瑰花🌹'</span>);</span><br><span class="line">      xiaoli.reciveFlower(flower);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">xiaoming.sendFlower(laowang);</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp; 利用代理模式可以实现图片预加载，当图片资源未加载出时，为了避免长时间的白屏时间，是u用加载图进行占位。代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myImage = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> imgNode = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span><br><span class="line">  $(<span class="string">"#div"</span>).append(imgNode);</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    setSrc: <span class="function"><span class="keyword">function</span> (<span class="params">src</span>)</span>&#123;</span><br><span class="line">      imgNode.src = src;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> proxyImage = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> img = <span class="keyword">new</span> Image;</span><br><span class="line">  img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    myImage.setSrc(<span class="keyword">this</span>.src);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    setSrc: <span class="function"><span class="keyword">function</span> (<span class="params">src</span>)</span>&#123;</span><br><span class="line">      myImage.setSrc(<span class="string">'http://img.zcool.cn/community/01191d57b4265f0000018c1b95706d.gif'</span>);	<span class="comment">// 这应该为本地loading动图</span></span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">// 模拟网络请求</span></span><br><span class="line">        img.src = src;</span><br><span class="line">      &#125;, <span class="number">3000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">proxyImage.setSrc(<span class="string">'http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1309/25/c29/26303615_1380079893379_500x500.jpg'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp; 当然图片预加载不使用代理模式也可以实现，代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> loadImage = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> imgNode = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span><br><span class="line">  $(<span class="string">"#div"</span>).append(imgNode);</span><br><span class="line">  <span class="keyword">var</span> img = <span class="keyword">new</span> Image;</span><br><span class="line">  img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    imgNode.src = img.src;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    setSrc: <span class="function"><span class="keyword">function</span> (<span class="params">src</span>)</span>&#123;</span><br><span class="line">      imgNode.src = <span class="string">'http://img.zcool.cn/community/01191d57b4265f0000018c1b95706d.gif'</span>;</span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 模拟网络请求</span></span><br><span class="line">        img.src = src;</span><br><span class="line">      &#125;,<span class="number">3000</span>);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">loadImage.setSrc(<span class="string">'http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1309/25/c29/26303615_1380079893379_500x500.jpg'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp; 但是可以看出这种很明显违反了单一职责原则，违反了该原则，当一个对象承担的职责过多时，那么这个对象将会变的非常庞大，并且维护起来将会非常困难。面向对象设计鼓励将行为细化，即为“高内聚、低耦合”的体现。其实当我们违反了单一职责原则的同时，也会违反开放-封闭原则。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/17/agency/" data-id="cjncu4rg60003j4uaiad03owl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/17/strategy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          strategy
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/17/designModel/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript设计模式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/10/17/factory/">工厂模式</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/17/strategy/">strategy</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/17/agency/">代理模式</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/17/designModel/">JavaScript设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/17/singleton/">单例模式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
