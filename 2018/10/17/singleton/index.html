@@ -5,15 +5,20 @@
   
 
   
-  <title>Hexo</title>
+  <title>单例模式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="定义：保证一个类仅有一个实例，并提供一个访问它的全局访问点实例代码：1234567// 精简版单例模式  var getSingle = function (fn) &amp;#123;    var result;    return function () &amp;#123;      return result || ( result = fn.apply(this, arguments) );    &amp;">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单例模式">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/singleton/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="定义：保证一个类仅有一个实例，并提供一个访问它的全局访问点实例代码：1234567// 精简版单例模式  var getSingle = function (fn) &amp;#123;    var result;    return function () &amp;#123;      return result || ( result = fn.apply(this, arguments) );    &amp;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-17T06:48:41.975Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="单例模式">
+<meta name="twitter:description" content="定义：保证一个类仅有一个实例，并提供一个访问它的全局访问点实例代码：1234567// 精简版单例模式  var getSingle = function (fn) &amp;#123;    var result;    return function () &amp;#123;      return result || ( result = fn.apply(this, arguments) );    &amp;">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,55 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-designModel" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/17/designModel/" class="article-date">
-  <time datetime="2018-10-16T16:00:00.000Z" itemprop="datePublished">2018-10-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/designModel/">JavaScript设计模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="设计模式六大原则："><a href="#设计模式六大原则：" class="headerlink" title="设计模式六大原则："></a>设计模式六大原则：</h4><ol>
-<li><strong>单一职责原则：</strong>  一个类只负责一个职责，避免因为一个功能需要修改而影响另一个系统</li>
-<li><strong>里氏替换原则：</strong> 在使用基类的地方可以任意使用其子类，保证子类可以完美替代基类，即父类可以访问的地方子类都可以访问。</li>
-<li><strong>依赖倒置原则：</strong> 高层模块不应该依赖底层模块，二者都不应该依赖其抽象，即只依赖接口，不依赖方法。</li>
-<li><strong>接口分离原则：</strong> 客户端不应该依赖它不需要的接口，一个类对另一个类的依赖应该建立在最小的接口上，即把大接口拆分成小接口</li>
-<li><strong>迪米特原则：</strong> 最少知道原则，即一个类依赖的东西越少越好，对应“高内聚，低耦合”</li>
-<li><strong>开放封闭原则：</strong> 对扩展开放，对修改封闭，即尽量通过扩展软件实体来解决需求变化，而不是通过修改已有代码来完成变化。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/designModel/" data-id="cjncspouj0000a0ua7030ssq1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-singleton" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-singleton" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/17/singleton/" class="article-date">
   <time datetime="2018-10-16T16:00:00.000Z" itemprop="datePublished">2018-10-17</time>
@@ -121,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/singleton/">单例模式</a>
+    <h1 class="article-title" itemprop="name">
+      单例模式
     </h1>
   
 
@@ -145,11 +102,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/17/designModel/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript设计模式
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
-
+</article>
 
 </section>
         
