@@ -131,7 +131,7 @@ footer {
 	bottom: -100px;
 	padding: 3rem 0 2rem 0;
 	margin-top: 5rem;
-	background-color: #252525;
+	background-color: #706f6f;
 	color: #fff !important;
 	text-align: center;
 }
@@ -140,6 +140,31 @@ footer a {
 	color: #fff;
 	display: inline-block;
 }
+
+
+.zhuanfa {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+
+.fa-github {
+	background: url(../img/GitHub.png);
+	background-size: contain;
+}
+.fa-weibo {
+	background: url(../img/weibo.png);
+	background-size: contain;
+}
+.fa-email {
+	background: url(../img/email.png);
+	background-size: contain;
+}
+.fa-qq {
+	background: url(../img/qq.png);
+	background-size: contain;
+}
+
 
 footer span {
 	color: #fff;

@@ -10,6 +10,12 @@
 	text-align: center;
 }
 
+/* .theme-annie-social a {
+	display: inline-block;
+	text-align: center;
+	background: #e5e5e5;
+} */
+
 .blog-entry-article {
 	margin: 3rem 0;
 	padding-bottom: 3rem;
