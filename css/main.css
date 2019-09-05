@@ -164,6 +164,10 @@ footer a {
 	background: url(../img/qq.png);
 	background-size: contain;
 }
+.fa-camera {
+	background: url(../img/camera.png);
+	background-size: contain;
+}
 
 
 footer span {
