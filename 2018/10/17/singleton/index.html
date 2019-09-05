@@ -62,7 +62,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		10/19/2018 
+		9/5/2019 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -193,7 +193,7 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>定义：保证一个类仅有一个实例，并提供一个访问它的全局访问点<br>实例代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 精简版单例模式</span></span><br><span class="line">  <span class="keyword">var</span> getSingle = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> result || ( result = fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>) );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+						<p>定义：保证一个类仅有一个实例，并提供一个访问它的全局访问点<br><a id="more"></a><br>实例代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 精简版单例模式</span></span><br><span class="line">  <span class="keyword">var</span> getSingle = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> result || ( result = fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>) );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;单例模式应用场景：比如当一个页面需要一个登陆框，无论在任何状态都只有一个登陆框，那我们可以利用单例模式来控制有且只有一个登陆框。<br>&emsp;&emsp;如下：当我们渲染完一个列表之后，给这个列表绑定click事件，如果是通过Ajax动态的向列表里面追加数据，在使用事件代理的情况下，click事件实际上只需要在第一次渲染列表的时候被绑定一次，但是我们不想去判断是否是第一次渲染列表，当然我们可以使用jQuery给dom元素绑定one事件，但是我们也可以使用单例模式来解决。代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bindEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'div'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'click'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> divClick = getSingle(bindEvent);</span><br><span class="line">divClick();</span><br><span class="line">divClick();</span><br><span class="line">divClick();</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;可以看到在后面我们执行了3次该方法，但实际上只执行了一次。至于单例模式的其他用途可以自己发挥。<br>&emsp;&emsp;注：要根据业务复杂程度来判断是否有必要使用该模式，其他设计模式反之亦然，当业务逻辑不是很复杂时，使用设计模式反而会使代码很冗余。</p>
 
@@ -321,7 +321,7 @@
 	<div  class="blog-text-center">
 		<div class="theme-annie-copyright">
 			
-				&copy; 2017 - 2018, content by Guo YueXin. All Rights Reserved.			       	
+				&copy; 2017 - 2019, content by Guo YueXin. All Rights Reserved.			       	
 			
 		</div>
 	</div>
