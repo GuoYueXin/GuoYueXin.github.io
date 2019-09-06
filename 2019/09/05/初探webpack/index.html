@@ -62,7 +62,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		9/5/2019 
+		9/6/2019 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -193,7 +193,33 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h4 id="初探webpack"><a href="#初探webpack" class="headerlink" title="初探webpack"></a>初探webpack</h4>
+						<blockquote>
+<p><a href="https://webpack.js.org" target="_blank" rel="noopener">webpack</a> 是一个大包模块化JavaScript的工具，在webpack里一切文件皆模块，通过Loader转换文件，通过Plugin注入钩子，最后输出有多个模块组成的文件。webpack专注于构建模块化项目。<br><br><a id="more"></a></p>
+</blockquote>
+<h3 id="webpack-的优点如下："><a href="#webpack-的优点如下：" class="headerlink" title="webpack 的优点如下："></a><strong>webpack 的优点如下：</strong><br></h3><blockquote>
+<ul>
+<li>专注于处理模块化的项目，能做到开箱即用、一步到位</li>
+<li>可通过Plugin扩展，完整好用又不失灵活</li>
+<li>使用场景不局限于web开发</li>
+<li>社区庞大活跃，经常引入紧跟时代发展的新特性，能为大多数场景找到已有的开源扩展</li>
+<li>良好的开发体验</li>
+</ul>
+</blockquote>
+<h3 id="webpack基本配置"><a href="#webpack基本配置" class="headerlink" title="webpack基本配置"></a><strong>webpack基本配置</strong></h3><ol>
+<li><p>webpack.config.js基本结构</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  entry: &#123;&#125;,     <span class="comment">// 入口文件相关配置</span></span><br><span class="line">  output: &#123;&#125;,    <span class="comment">// 配置如何输出最终的代码</span></span><br><span class="line">  resolve: &#123;&#125;,   <span class="comment">// 配置如何寻找模块的规则</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;&#125;,    <span class="comment">// 配置处理模块的规则</span></span><br><span class="line">  plugins: [],   <span class="comment">// 配置扩展插件</span></span><br><span class="line">  devServer: &#123;&#125;, <span class="comment">// 配置DevServer</span></span><br><span class="line">  ...            <span class="comment">// 其他零散配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>entry</strong></p>
+<blockquote>
+<p><code>entry</code> 是配置模块的入口，webpack执行构建的第一步将从入口开始，搜寻及地柜解析出所有入口依赖的模块。</p>
+<font color="red">该项为必填项</font>
+
+<p>entry类型</p>
+<p>|类型 |例子 | 含义|<br>|:—-|:—-|:—-|<br>|string| ‘./app/entry’ | 入口木块的文件路径，可以是相对路径 |<br>| array | [‘./app/entry1’, ‘./app/entry2’] | 入口木块的文件路径，可以是相对路径|<br>| object| { a: ‘./app/entry-a’, b: [‘./app/entry-b-1’, ‘./app/entry-b-2’] } | 配置多个入口，每个入口生成一个chunk|<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是array类型，则搭配output.library配置项使用时，只有数组里的最后一个入口文件的模块会被导出。（<font color="red">可以在入口文件进行polyfill的加载</font>）</p>
+</blockquote>
+</li>
+</ol>
+
 					
 				</div>
 			</div>
@@ -295,7 +321,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#初探webpack"><span class="post-toc-text">初探webpack</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#webpack-的优点如下："><span class="post-toc-text">webpack 的优点如下：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#webpack基本配置"><span class="post-toc-text">webpack基本配置</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>
